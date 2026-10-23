@@ -260,7 +260,7 @@ def apply_efi_drivers(config_path, customization, macos_version, notices, fetch,
                 fh.write(efi)
             os.replace(os.path.join(ddir, d["name"] + ".tmp"), os.path.join(ddir, d["name"]))
             if not any(isinstance(e, dict) and e.get("Path") == d["name"] for e in drivers):
-                drivers.append({"Arguments": "", "Comment": d["what"], "Enabled": True, "LoadEarly": False,
+                drivers.append({"Arguments": "", "Comment": d["what"], "Enabled": True, "HideVerbose": False, "LoadEarly": False,
                                 "Path": d["name"]})
             written.append(d["name"])
         if written:
